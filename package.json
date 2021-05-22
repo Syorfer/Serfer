@@ -25,6 +25,7 @@
     "fastify": "^3.15.1",
     "fastify-nextjs": "^5.4.1",
     "fastify-postgres": "^3.5.0",
+    "fastify-swagger": "^4.7.0",
     "json-server": "^0.16.3",
     "next": "^10.2.2",
     "pg": "^8.6.0",
