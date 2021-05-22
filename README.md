@@ -3,4 +3,4 @@
 # run for develop 
 npm run serve
 
-copy .env.example to .env
+copy .env.template to .env
