@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Head from 'next/head'
+import Header from './Header'
 
 export function MainLayout({ children, title = 'Next App' }) {
   return (
@@ -10,10 +11,11 @@ export function MainLayout({ children, title = 'Next App' }) {
         <meta name="description" content="Sёrfer for next" />
 
       </Head>
-      <nav>
+      <Header />
+      {/* <nav>
         <Link href={'/'}><a>Home</a></Link>
         <Link href={'/about'}><a>About</a></Link>
-      </nav>
+      </nav> */}
       <main>
         {children}
       </main>
