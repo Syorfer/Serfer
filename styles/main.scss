@@ -1,11 +1,42 @@
+@import './variables.scss';
+
 body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  padding: 25px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__form {
+    position: relative;
+  }
+  &__input {
+    width: 624px;
+    border: 2px solid $blue;
+    border-radius: 35px;
+    outline: none;
+    padding: 25px;
+    &::placeholder {
+      font-size: 18px;
+      color: #adadad;
+    }
+  }
+  &__btn {
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  &__cities {
+    border: none;
+    outline: none;
+    font-size: 18px;
+  }
 }

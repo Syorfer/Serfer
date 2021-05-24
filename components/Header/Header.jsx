@@ -4,16 +4,16 @@ const Header = () => {
     return ( 
         <header className='header'>
             <h1 className='header__logo'>ЛОГО</h1>
-            <form>
+            <form className='header__form'>
                 <input 
                     type='text'
                     placeholder='Поиск'
                     className='header__input'
                 />
-                <button><SearchIcon /></button>
+                <button className='header__btn'><SearchIcon /></button>
             </form>
-            <select>
-                <option disabled>Город</option>
+            <select className='header__cities'>
+                <option>Город</option>
                 <option>Москва</option>
                 <option>Санкт-Петербург</option>
             </select>    
