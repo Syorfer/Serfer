@@ -43,8 +43,8 @@ body {
 }
 
 .footer {
-  background: #F1F1F1;
-  padding: 0 80px;
+  background: #f1f1f1;
+  padding: 20px 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -56,6 +56,27 @@ body {
     text-decoration: none;
     font-size: 18px;
   }
+  &__txt {
+    font-size: 18px;
+    line-height: 21px;
+    color: $textColor;
+    margin: 0;
+  }
+  &__social-link {
+    font-size: 28px;
+  }
+}
+
+.twitter {
+  color: #1da1f2;
+}
+
+.facebook {
+  color: #1877f2;
+}
+
+.telegram {
+  color: #2aabee;
 }
 
 .flex {
@@ -64,6 +85,14 @@ body {
 
 .items-center {
   align-items: center;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mr-25 {
+  margin-right: 25px;
 }
 
 .mr-60 {

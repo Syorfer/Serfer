@@ -1,4 +1,10 @@
 import Link from 'next/link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faTwitter,
+  faFacebook,
+  faTelegram,
+} from '@fortawesome/free-brands-svg-icons';
 
 const Footer = () => {
   return (
@@ -13,7 +19,24 @@ const Footer = () => {
         </Link>
       </div>
       <div>
-        <p>Мы в соцсетях</p>
+        <p className='footer__txt'>Мы в соцсетях</p>
+        <div className='footer__icon-wrapper mt-10'>
+          <Link href='/'>
+            <a className='footer__social-link twitter mr-25'>
+              <FontAwesomeIcon icon={faTwitter} />
+            </a>
+          </Link>
+          <Link href='/'>
+            <a className='footer__social-link facebook mr-25'>
+              <FontAwesomeIcon icon={faFacebook} />
+            </a>
+          </Link>
+          <Link href='/'>
+            <a className='footer__social-link telegram mr-25'>
+              <FontAwesomeIcon icon={faTelegram} />
+            </a>
+          </Link>
+        </div>
       </div>
     </footer>
   );
