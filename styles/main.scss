@@ -41,3 +41,31 @@ body {
     font-size: 18px;
   }
 }
+
+.footer {
+  background: #F1F1F1;
+  padding: 0 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &__logo {
+    margin-right: 150px;
+  }
+  &__link {
+    color: $textColor;
+    text-decoration: none;
+    font-size: 18px;
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.mr-60 {
+  margin-right: 60px;
+}
