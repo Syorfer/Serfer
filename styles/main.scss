@@ -33,7 +33,7 @@ body {
     padding: 25px;
     &::placeholder {
       font-size: 18px;
-      color: #adadad;
+      color: $light-grey;
     }
   }
   &__btn {
@@ -42,8 +42,12 @@ body {
     border: none;
     cursor: pointer;
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 25px;
+    right: 25px;
+    &-icon {
+      color: $light-grey;
+      font-size: 20px;
+    }
   }
   &__cities {
     border: none;
