@@ -6,7 +6,17 @@ body {
   padding: 0;
 }
 
+#__next {
+  display: grid;
+  grid-template-areas: 
+  'header header'
+  'aside offer'
+  'footer footer';
+  grid-template-rows: 1fr 2fr;
+}
+
 .header {
+  grid-area: header;
   padding: 25px 80px;
   display: flex;
   justify-content: space-between;
@@ -42,7 +52,13 @@ body {
   }
 }
 
+.offer {
+  grid-area: offer;
+  background: $dark-blue;
+}
+
 .footer {
+  grid-area: footer;
   background: #f1f1f1;
   padding: 20px 80px;
   display: flex;
