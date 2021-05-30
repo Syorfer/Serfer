@@ -51,15 +51,29 @@ main {
   justify-content: space-between;
 }
 
+.params {
+  padding: 50px 80px 0;
+  &__price {
+    width: 300px;
+  }
+  &__slider-value {
+    font-size: 14px;
+    color: $textColor;
+    margin: 0;
+  }
+}
+
 .offer {
   background: $dark-blue;
   width: 100%;
+  height: 100vh;
   &__title {
     color: #fff;
     font-weight: 500;
     font-size: 32px;
     line-height: 38px;
     width: 550px;
+    margin: 50px 0 100px 30px;
   }
 }
 
@@ -69,10 +83,6 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  left: 0;
   &__logo {
     margin-right: 150px;
   }
@@ -92,6 +102,9 @@ main {
   }
 }
 
+
+// social links
+
 .twitter {
   color: #1da1f2;
 }
@@ -104,6 +117,9 @@ main {
   color: #2aabee;
 }
 
+
+// flexbox classes
+
 .flex {
   display: flex;
 }
@@ -112,8 +128,19 @@ main {
   align-items: center;
 }
 
+.justify-between {
+  justify-content: space-between;
+}
+
+
+// margins
+
 .mt-10 {
   margin-top: 10px;
+}
+
+.mt-30 {
+  margin-top: 30px;
 }
 
 .mr-25 {
@@ -122,4 +149,23 @@ main {
 
 .mr-60 {
   margin-right: 60px;
+}
+
+.mb-30 {
+  margin-bottom: 30px;
+}
+
+.ml-80 {
+  margin-left: 80px;
+}
+
+
+// Material UI styles changed
+
+.MuiSlider {
+  &-thumb,
+  &-rail,
+  &-track {
+    color: $orange;
+  }
 }
