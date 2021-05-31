@@ -35,8 +35,8 @@ const CustomSlider = ({ children }) => {
         getAriaValueText={valuetext}
       />
       <div className='flex justify-between mb-30'>
-        <p className='params__slider-value'>От {value[0]} ₽</p>
-        <p className='params__slider-value'>До {value[1]} ₽</p>
+        <p className='params__txt'>От {value[0]} ₽</p>
+        <p className='params__txt'>До {value[1]} ₽</p>
       </div>
     </div>
   );

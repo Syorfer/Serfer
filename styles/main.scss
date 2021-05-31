@@ -56,7 +56,7 @@ main {
   &__price {
     width: 300px;
   }
-  &__slider-value {
+  &__txt {
     font-size: 14px;
     color: $textColor;
     margin: 0;
@@ -137,6 +137,10 @@ main {
 
 .mt-10 {
   margin-top: 10px;
+}
+
+.mt-20 {
+  margin-top: 20px;
 }
 
 .mt-30 {

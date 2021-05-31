@@ -7,10 +7,8 @@ const EmptyOffer = () => {
       <h1 className='offer__title'>
         Здесь будут находиться результаты вашего поиска
       </h1>
-      <Grid container direction='column' alignItems='center'>
-        <Grid>
-          <Image src='/man.svg' alt='man-img' width={550} height={550} />
-        </Grid>
+      <Grid container justify='center'>
+        <Image src='/man.svg' alt='man-img' width={550} height={550} />
       </Grid>
     </>
   );
