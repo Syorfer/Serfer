@@ -1,3 +1,4 @@
+import { Grid } from '@material-ui/core';
 import Image from 'next/image';
 
 const EmptyOffer = () => {
@@ -6,12 +7,11 @@ const EmptyOffer = () => {
       <h1 className='offer__title'>
         Здесь будут находиться результаты вашего поиска
       </h1>
-      <Image
-        src='/man.svg'
-        alt='man-img'
-        width={550}
-        height={550}
-      />
+      <Grid container direction='column' alignItems='center'>
+        <Grid>
+          <Image src='/man.svg' alt='man-img' width={550} height={550} />
+        </Grid>
+      </Grid>
     </>
   );
 };
