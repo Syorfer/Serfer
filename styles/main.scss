@@ -23,7 +23,7 @@ body {
     padding: 25px;
     &::placeholder {
       font-size: 18px;
-      color: #adadad;
+      color: $light-grey;
     }
   }
   &__btn {
@@ -32,12 +32,140 @@ body {
     border: none;
     cursor: pointer;
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 25px;
+    right: 25px;
+    &-icon {
+      color: $light-grey;
+      font-size: 20px;
+    }
   }
   &__cities {
     border: none;
     outline: none;
     font-size: 18px;
+  }
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+}
+
+.params {
+  padding: 50px 80px 0;
+  &__price {
+    width: 300px;
+  }
+  &__slider-value {
+    font-size: 14px;
+    color: $textColor;
+    margin: 0;
+  }
+}
+
+.offer {
+  background: $dark-blue;
+  width: 100%;
+  height: 100vh;
+  &__title {
+    color: #fff;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 38px;
+    width: 550px;
+    margin: 50px 0 100px 30px;
+  }
+}
+
+.footer {
+  background: #f1f1f1;
+  padding: 20px 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &__logo {
+    margin-right: 150px;
+  }
+  &__link {
+    color: $textColor;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  &__txt {
+    font-size: 18px;
+    line-height: 21px;
+    color: $textColor;
+    margin: 0;
+  }
+  &__social-link {
+    font-size: 28px;
+  }
+}
+
+
+// social links
+
+.twitter {
+  color: #1da1f2;
+}
+
+.facebook {
+  color: #1877f2;
+}
+
+.telegram {
+  color: #2aabee;
+}
+
+
+// flexbox classes
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+
+// margins
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mt-30 {
+  margin-top: 30px;
+}
+
+.mr-25 {
+  margin-right: 25px;
+}
+
+.mr-60 {
+  margin-right: 60px;
+}
+
+.mb-30 {
+  margin-bottom: 30px;
+}
+
+.ml-80 {
+  margin-left: 80px;
+}
+
+
+// Material UI styles changed
+
+.MuiSlider {
+  &-thumb,
+  &-rail,
+  &-track {
+    color: $orange;
   }
 }

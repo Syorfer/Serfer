@@ -1,4 +1,5 @@
-import SearchIcon from "../icons/SearchIcon";
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Header = () => {
     return ( 
@@ -10,7 +11,7 @@ const Header = () => {
                     placeholder='Поиск'
                     className='header__input'
                 />
-                <button className='header__btn'><SearchIcon /></button>
+                <button className='header__btn'><FontAwesomeIcon icon={faSearch} className='header__btn-icon' /></button>
             </form>
             <select className='header__cities'>
                 <option>Город</option>
