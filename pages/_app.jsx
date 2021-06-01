@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { Provider } from 'react-redux';
-import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/core/styles';
 import { CacheProvider } from '@emotion/react';
-import CssBaseline from '@material-ui/core/CssBaseline';
+import { CssBaseline } from '@material-ui/core';
 import createCache from '@emotion/cache';
 import { useStore } from '../store/store';
 import theme from '../src/theme';

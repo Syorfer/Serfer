@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Footer from './Footer/Footer';
+import Footer from './Footer';
 import Header from './Header';
 
 export function MainLayout({ children, title = 'Next App' }) {

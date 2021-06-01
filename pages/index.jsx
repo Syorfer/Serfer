@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { MainLayout } from '../components/MainLayout';
 import OfferLayout from '../components/Offer/OfferLayout';
 import Params from '../components/Params';
