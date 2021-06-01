@@ -9,11 +9,7 @@ const Review = () => {
       </Typography>
       <div className='flex items-center justify-between'>
         <p className='params__txt mt-20'>До 10 отзывов</p>
-          {/* <Radio
-            value='radioA'
-            inputProps={{ 'aria-label': 'Radio A' }}
-          /> */}
-          <CustomRadio />
+        <CustomRadio />
       </div>
       <div className='flex items-center justify-between'>
         <p className='params__txt mt-10'>Больше 10 отзывов</p>

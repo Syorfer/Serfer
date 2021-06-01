@@ -1,4 +1,4 @@
-import CustomSlider from './Sliders/CustomSlider';
+import RangeSlider from './Sliders/RangeSlider';
 import { Typography, Button } from '@material-ui/core';
 import RatingSlider from './Sliders/RatingSlider';
 import Review from './Review';
@@ -14,8 +14,8 @@ const Params = () => {
         Параметры
       </Typography>
       <div className='params__price'>
-        <CustomSlider>Цена</CustomSlider>
-        <CustomSlider>Доставка</CustomSlider>
+        <RangeSlider>Цена</RangeSlider>
+        <RangeSlider>Доставка</RangeSlider>
         <RatingSlider>Рейтинг</RatingSlider>
         <Review />
       </div>

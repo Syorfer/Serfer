@@ -13,7 +13,7 @@ function valuetext(value) {
   return `${value}°C`;
 }
 
-const CustomSlider = ({ children }) => {
+const RangeSlider = ({ children }) => {
   const classes = useStyles();
   const [value, setValue] = React.useState([1000, 5000]);
 
@@ -42,4 +42,4 @@ const CustomSlider = ({ children }) => {
   );
 };
 
-export default CustomSlider;
+export default RangeSlider;
