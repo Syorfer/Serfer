@@ -1,5 +1,5 @@
 import { Typography } from '@material-ui/core';
-import CustomRadio from '../CustomRadio';
+import CustomRadio from '../../CustomRadio';
 
 const Review = () => {
   return (

@@ -1,6 +1,6 @@
-import RangeSlider from './Sliders/RangeSlider';
+import RangeSlider from '../Sliders/RangeSlider';
 import { Typography, Button } from '@material-ui/core';
-import RatingSlider from './Sliders/RatingSlider';
+import RatingSlider from '../Sliders/RatingSlider';
 import Review from './Review';
 
 const Params = () => {
