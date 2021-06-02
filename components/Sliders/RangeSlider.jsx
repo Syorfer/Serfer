@@ -1,7 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-import Slider from '@material-ui/core/Slider';
+import { Slider, Typography } from '@material-ui/core';
 
 const useStyles = makeStyles({
   root: {
@@ -13,7 +12,7 @@ function valuetext(value) {
   return `${value}°C`;
 }
 
-const CustomSlider = ({ children }) => {
+const RangeSlider = ({ children }) => {
   const classes = useStyles();
   const [value, setValue] = React.useState([1000, 5000]);
 
@@ -35,11 +34,11 @@ const CustomSlider = ({ children }) => {
         getAriaValueText={valuetext}
       />
       <div className='flex justify-between mb-30'>
-        <p className='params__slider-value'>От {value[0]} ₽</p>
-        <p className='params__slider-value'>До {value[1]} ₽</p>
+        <p className='params__txt'>От {value[0]} ₽</p>
+        <p className='params__txt'>До {value[1]} ₽</p>
       </div>
     </div>
   );
 };
 
-export default CustomSlider;
+export default RangeSlider;
