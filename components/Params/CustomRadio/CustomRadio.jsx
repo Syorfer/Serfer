@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import { orange } from '@material-ui/core/colors';
 import { Radio } from '@material-ui/core';
 
 const OrangeRadio = withStyles({
   root: {
-    color: orange[400],
+    color: '#FF702A',
     '&$checked': {
       color: 'default',
     },
@@ -14,7 +13,7 @@ const OrangeRadio = withStyles({
 })((props) => <Radio color='default' {...props} />);
 
 const CustomRadio = () => {
-  const [selectedValue, setSelectedValue] = useState('');
+  const [selectedValue, setSelectedValue] = useState('a');
 
   const handleChange = (event) => {
     setSelectedValue(event.target.value);
@@ -23,9 +22,9 @@ const CustomRadio = () => {
   return (
     <div>
       <OrangeRadio
-        checked={false}
+        checked={selectedValue === 'a'}
         onChange={handleChange}
-        value={selectedValue}
+        value={'a'}
         name='radio-button-demo'
         inputProps={{ 'aria-label': 'A' }}
       />

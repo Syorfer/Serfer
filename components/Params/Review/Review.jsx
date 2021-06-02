@@ -13,9 +13,11 @@ const Review = () => {
       </div>
       <div className='flex items-center justify-between'>
         <p className='params__txt mt-10'>Больше 10 отзывов</p>
+        <CustomRadio />
       </div>
       <div className='flex items-center justify-between'>
         <p className='params__txt mt-10'>Не имеет значения</p>
+        <CustomRadio />
       </div>
     </>
   );
