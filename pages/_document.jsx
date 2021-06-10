@@ -21,7 +21,7 @@ export default class MyDocument extends Document {
           {/* PWA primary color */}
           <meta name='theme-color' content={theme.palette.primary.main} />
           <link
-            href='https://fonts.googleapis.com/css2?family=Roboto&display=swap'
+            href='https://fonts.googleapis.com/css2?family=Roboto&family=Inter:wght@400;700;900&display=swap'
             rel='stylesheet'
           />
         </Head>
@@ -71,11 +71,11 @@ MyDocument.getInitialProps = async (ctx) => {
       enhanceApp: (App) => (props) => sheets.collect(<App {...props} />),
       // Take precedence over the CacheProvider in our custom _app.js
       enhanceComponent: (Component) => (props) =>
-        (
-          <CacheProvider value={cache}>
-            <Component {...props} />
-          </CacheProvider>
-        ),
+      (
+        <CacheProvider value={cache}>
+          <Component {...props} />
+        </CacheProvider>
+      ),
     });
 
   const initialProps = await Document.getInitialProps(ctx);

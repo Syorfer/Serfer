@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const Header = () => {
     return ( 
         <header className='header'>
-            <h1 className='header__logo'>ЛОГО</h1>
+            <h1 className='header__logo'>Sёrfer</h1>
             <form className='header__form'>
                 <input 
                     type='text'
