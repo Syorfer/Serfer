@@ -2,23 +2,23 @@
   "compilerOptions": {
       "baseUrl": ".",
       "paths": {
-        "@/app/*": [
-            "src/app/*"
+        "@/src/*": [
+            "src/*"
         ],
-        "@/common/*": [
-            "src/common/*"
+        "@/constants/*": [
+            "src/constants/*"
         ],
         "@/components/*": [
-            "src/common/components/*"
+            "src/components/*"
         ],
-        "@/utils/*": [
-            "src/common/utils/*"
+        "@/contexts/*": [
+            "src/contexts/*"
         ],
-        "@/layouts/*": [
-            "src/layouts/*"
+        "@/redux/*": [
+            "src/redux/*"
         ],
-        "@/modules/*": [
-            "src/modules/*"
+        "@/styles/*": [
+            "src/styles/*"
         ],
         "@/pages/*": [
             "src/pages/*"

@@ -4,7 +4,7 @@ import createCache from '@emotion/cache';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheets } from '@material-ui/styles';
 import createEmotionServer from '@emotion/server/create-instance';
-import theme from '../src/theme';
+import theme from '@/src/theme';
 
 const getCache = () => {
   const cache = createCache({ key: 'css', prepend: true });
