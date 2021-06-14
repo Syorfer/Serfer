@@ -1,28 +1,35 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { SearchContext } from '@/contexts/searchContext';
 
 const Header = () => {
     const { search, setSearch } = useContext(SearchContext);
+    const [form, setForm] = useState(search);
 
     const onFieldChange = (e) => {
-        const { name: fieldName, type } = e.target;
-
-        const value = type === 'checkbox' ? e.target.checked : e.target.value;
-
-        setSearch(prev => ({ ...prev, [fieldName]: value }));
+        const { name: fieldName, value } = e.target;
+       
+        setForm(prev => ({ ...prev, [fieldName]: value }));
     };
-    return ( 
+    const onSubmit = (e) => {
+        setSearch(prev => ({ ...prev, searchValue: form.searchValue, submit: true }));
+        e.preventDefault();
+    };
+    const onReset = () => {
+        setForm({ searchValue: ''});
+    };
+
+    return (
         <header className='header'>
             <h1 className='header__logo'>Sёrfer</h1>
-            <form className='header__form'>
-                <input 
+            <form className='header__form' onSubmit={onSubmit} onReset={onReset}>
+                <input
                     type='text'
                     placeholder='Поиск'
                     className='header__input'
-                    name="searchValue"                  
-                    value={search.searchValue}
+                    name="searchValue"
+                    value={form.searchValue}
                     onChange={onFieldChange}
                 />
                 <button className='header__btn'><FontAwesomeIcon icon={faSearch} className='header__btn-icon' /></button>
@@ -31,9 +38,9 @@ const Header = () => {
                 <option>Город</option>
                 <option>Москва</option>
                 <option>Санкт-Петербург</option>
-            </select>    
+            </select>
         </header>
-     );
+    );
 }
- 
+
 export default Header;
