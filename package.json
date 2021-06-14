@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start",
     "serve": "concurrently \"npm run dev\" \"npm run mock\"",
-    "mock": "json-server -w db.json -p 4300 -d 1750",
+    "mock": "json-server -w db.json -p 4300 -d 450",
     "fastpg": "nodemon server/index.js"
   },
   "repository": {
