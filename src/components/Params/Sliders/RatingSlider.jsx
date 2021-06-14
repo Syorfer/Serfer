@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Slider, Typography } from '@material-ui/core';
+import { SearchParamContext } from '@/contexts/searchParamContext';
 
 const useStyles = makeStyles({
   root: {

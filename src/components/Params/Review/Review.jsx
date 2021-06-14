@@ -1,5 +1,6 @@
 import { Typography } from '@material-ui/core';
-import CustomRadio from '../../CustomRadio';
+import CustomRadio from './CustomRadio';
+import { SearchParamContext } from '@/contexts/searchParamContext';
 
 const Review = () => {
   return (
