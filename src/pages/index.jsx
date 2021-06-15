@@ -7,6 +7,7 @@ import { INITIAL_SEARCH } from '@/constants/initSearch'
 
 export default function Index() {
   const [search, setSearch] = useState(INITIAL_SEARCH);
+  
   return (
     <SearchContext.Provider value={{ search, setSearch }}>
       <MainLayout title={'Home Page'}>

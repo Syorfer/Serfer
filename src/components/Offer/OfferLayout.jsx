@@ -8,7 +8,7 @@ const OfferLayout = () => {
   const { search } = useContext(SearchContext);
   return (
     <div className='offer'>
-      {search.searchValue === null ?
+      {(search.searchValue === null && search.searchValue.lenght < 2) ?
         <EmptyOffer /> :
         <OfferWResult />
       }
