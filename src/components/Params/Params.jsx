@@ -42,7 +42,7 @@ const Params = () => {
         <Button
           type='submit'
           variant='contained'
-          disabled={false}
+          disabled={!search.searchValue}
           style={{
             color: '#fff',
             background: '#FF702A',
