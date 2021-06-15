@@ -4,7 +4,7 @@ import { Typography, Button } from '@material-ui/core';
 import RatingSlider from './Sliders/RatingSlider';
 import Review from './Review';
 import { SearchParamContext } from '@/contexts/searchParamContext';
-import { INITIAL_PARAM } from '@/constants/initParam'
+import { INITIAL_PARAM } from '@/constants/initParam';
 
 const Params = () => {
   const [searchParam, setSearchParam] = useState(INITIAL_PARAM);

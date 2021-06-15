@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import { Radio } from '@material-ui/core';
 import { SearchParamContext } from '@/contexts/searchParamContext';
@@ -13,20 +13,23 @@ const OrangeRadio = withStyles({
   checked: {},
 })((props) => <Radio color='default' {...props} />);
 
-const CustomRadio = () => {
-  const [selectedValue, setSelectedValue] = useState('a');
+const CustomRadio = ({ val }) => {
 
-  const handleChange = (event) => {
-    setSelectedValue(event.target.value);
+  const { searchParam, setSearchParam } = useContext(SearchParamContext);
+  
+  const onFieldChange = (e) => {
+    const value = e.target.value;
+    setSearchParam(prev => ({ ...prev, review: value }));
+    console.log(value);
   };
 
   return (
     <div>
       <OrangeRadio
-        checked={selectedValue === 'a'}
-        onChange={handleChange}
-        value={'a'}
-        name='radio-button-demo'
+        checked={searchParam.review === val}
+        onChange={onFieldChange}
+        value={val}
+        name='review'
         inputProps={{ 'aria-label': 'A' }}
       />
     </div>
