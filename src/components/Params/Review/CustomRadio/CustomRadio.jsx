@@ -16,11 +16,11 @@ const OrangeRadio = withStyles({
 const CustomRadio = ({ val }) => {
 
   const { searchParam, setSearchParam } = useContext(SearchParamContext);
-  
+
   const onFieldChange = (e) => {
     const value = e.target.value;
     setSearchParam(prev => ({ ...prev, review: value }));
-    console.log(value);
+    //console.log(value);
   };
 
   return (
