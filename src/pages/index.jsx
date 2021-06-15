@@ -10,7 +10,7 @@ export default function Index() {
   
   return (
     <SearchContext.Provider value={{ search, setSearch }}>
-      <MainLayout title={'Home Page'}>
+      <MainLayout title={search.searchValue}>
         <Params />
         <OfferLayout />
       </MainLayout>
