@@ -12,20 +12,31 @@ body {
   justify-content: space-between;
   align-items: center;
   box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.1);
+
   &__form {
     position: relative;
   }
+
+  &__logo {
+
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: 36px;
+  }
+
   &__input {
     width: 624px;
     border: 2px solid $blue;
     border-radius: 35px;
     outline: none;
     padding: 25px;
+
     &::placeholder {
       font-size: 18px;
       color: $light-grey;
     }
   }
+
   &__btn {
     padding: 0;
     background: transparent;
@@ -34,11 +45,13 @@ body {
     position: absolute;
     top: 25px;
     right: 25px;
+
     &-icon {
       color: $light-grey;
       font-size: 20px;
     }
   }
+
   &__cities {
     border: none;
     outline: none;
@@ -53,6 +66,7 @@ main {
 
 .params {
   padding: 50px 80px 0;
+
   &__txt {
     font-size: 14px;
     color: $textColor;
@@ -64,6 +78,7 @@ main {
   background: $dark-blue;
   width: 100%;
   height: 100vh;
+
   &__title {
     color: #fff;
     font-weight: 500;
@@ -80,20 +95,27 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   &__logo {
     margin-right: 150px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: 24px;
   }
+
   &__link {
     color: $textColor;
     text-decoration: none;
     font-size: 18px;
   }
+
   &__txt {
     font-size: 18px;
     line-height: 21px;
     color: $textColor;
     margin: 0;
   }
+
   &__social-link {
     font-size: 28px;
   }
@@ -164,6 +186,7 @@ main {
 // Material UI styles changed
 
 .MuiSlider {
+
   &-thumb,
   &-rail,
   &-track {

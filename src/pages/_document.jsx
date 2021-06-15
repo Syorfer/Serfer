@@ -4,7 +4,7 @@ import createCache from '@emotion/cache';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheets } from '@material-ui/styles';
 import createEmotionServer from '@emotion/server/create-instance';
-import theme from '../src/theme';
+import theme from '@/src/theme';
 
 const getCache = () => {
   const cache = createCache({ key: 'css', prepend: true });
@@ -21,7 +21,7 @@ export default class MyDocument extends Document {
           {/* PWA primary color */}
           <meta name='theme-color' content={theme.palette.primary.main} />
           <link
-            href='https://fonts.googleapis.com/css2?family=Roboto&display=swap'
+            href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&family=Inter:wght@400;700;900&display=swap'
             rel='stylesheet'
           />
         </Head>
@@ -71,11 +71,11 @@ MyDocument.getInitialProps = async (ctx) => {
       enhanceApp: (App) => (props) => sheets.collect(<App {...props} />),
       // Take precedence over the CacheProvider in our custom _app.js
       enhanceComponent: (Component) => (props) =>
-        (
-          <CacheProvider value={cache}>
-            <Component {...props} />
-          </CacheProvider>
-        ),
+      (
+        <CacheProvider value={cache}>
+          <Component {...props} />
+        </CacheProvider>
+      ),
     });
 
   const initialProps = await Document.getInitialProps(ctx);
