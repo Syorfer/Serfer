@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Slider, Typography } from '@material-ui/core';
 import { SearchParamContext } from '@/contexts/searchParamContext';
@@ -12,9 +12,7 @@ const useStyles = makeStyles({
 function valuetext(value) {
   return `${value}°C`;
 }
-function valueOfType(type) {
 
-}
 
 const RangeSlider = ({ children, type }) => {
 
@@ -47,7 +45,7 @@ const RangeSlider = ({ children, type }) => {
 
 
   }
-  console.log(sliderValue);
+  //console.log(sliderValue);
   //const [value, setValue] = React.useState([sliderMin, sliderMax]);
   const handleChange = (event, newValue) => {
     setSearchParam(prev => ({ ...prev, [paramName]: newValue }));

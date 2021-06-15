@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Slider, Typography } from '@material-ui/core';
 import { SearchParamContext } from '@/contexts/searchParamContext';
@@ -14,11 +14,16 @@ function valuetext(value) {
 }
 
 const RatingSlider = ({ children }) => {
-  const [value, setValue] = React.useState(1);
+
   const classes = useStyles();
+  const { searchParam, setSearchParam } = useContext(SearchParamContext);
+
+ // const [value, setValue] = React.useState(1);
+  
 
   const handleChange = (event, newValue) => {
-    setValue(newValue);
+    //setValue(newValue);
+    setSearchParam(prev => ({ ...prev, rateValue: newValue }));
   };
 
   return (
@@ -27,18 +32,18 @@ const RatingSlider = ({ children }) => {
         {children}
       </Typography>
       <Slider
-        value={value}
+        value={searchParam.rateValue}
         onChange={handleChange}
         defaultValue={0}
         getAriaValueText={valuetext}
         aria-labelledby='discrete-slider'
         step={1}
         marks
-        min={1}
-        max={5}
+        min={searchParam.rateMin}
+        max={searchParam.rateMax}
       />
       <div className='flex justify-between mb-30'>
-        <p className='params__slider-value'>{value}</p>
+        <p className='params__slider-value'>{searchParam.rateValue}</p>
       </div>
     </div>
   );
