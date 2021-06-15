@@ -8,9 +8,13 @@ const OfferLayout = () => {
   const { search } = useContext(SearchContext);
   return (
     <div className='offer'>
-      {search.searchValue === null ?
-        <EmptyOffer /> :
+      <h1 className='offer__title'>
+        {search.searchValue.lenght}
+      </h1>
+      {search.submit ?
         <OfferWResult />
+        :
+        <EmptyOffer />
       }
     </div>
   );

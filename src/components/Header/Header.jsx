@@ -26,7 +26,7 @@ const Header = () => {
             <form className='header__form' onSubmit={onSubmit} onReset={onReset}>
                 <input
                     type='text'
-                    placeholder='Поиск'
+                    placeholder='Найдётся всё'
                     className='header__input'
                     name="searchValue"
                     value={form.searchValue}
