@@ -25,7 +25,7 @@ const Params = () => {
       submit: true
     }));
     e.preventDefault();
-    console.log(search);
+    // console.log(search);
   };
   return (
     <SearchParamContext.Provider value={{ searchParam, setSearchParam }}>
