@@ -10,15 +10,10 @@ import Avatar from "@material-ui/core/Avatar";
 import Typography from "@material-ui/core/Typography";
 import Image from "next/image";
 
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-
 import { SearchContext } from "@/contexts/searchContext";
 import { GoodsContext } from "@/contexts/goodsContext";
 import { CallMerge } from "@material-ui/icons";
+import BestOffer from "./BestOffer";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -36,42 +31,11 @@ const OfferWResult = () => {
   const { search } = useContext(SearchContext);
   const { goods } = useContext(GoodsContext);
 
-  const bestGood = goods.reduce((prevGood, curGood) => {
-    return prevGood.price < curGood.price ? prevGood : curGood;
-  }, 0);
-
-  console.log(bestGood);
-
   return (
     <>
       {/* <h1 className='offer__title'>{search.searchValue}</h1> */}
       <h1 className="offer__title">Лучшее предложение</h1>
-      <Card className={classes.root}>
-        <CardActionArea>
-          <CardMedia
-            component="img"
-            alt="Contemplative Reptile"
-            height="140"
-            image={bestGood.image}
-            title="Contemplative Reptile"
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="h2">
-              {bestGood.model}
-            </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-              {bestGood.rate}
-            </Typography>
-            <Typography gutterBottom variant="h5" component="h2">
-              {bestGood.price}
-            </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-              Доставка - {bestGood.deliveryCost} ₽
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-        <CardActions></CardActions>
-      </Card>
+      <BestOffer />
       <Grid container justify="center">
         <List className={classes.root}>
           {goods.map((good) => (
