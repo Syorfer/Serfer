@@ -24,13 +24,17 @@ export default function MyApp({ Component, pageProps }) {
       jssStyles.parentElement.removeChild(jssStyles);
     }
   }, []);
+
   const [search, setSearch] = useState(INITIAL_SEARCH);
+
   
 
   return (
     <CacheProvider value={cache}>
       {/* <Provider store={store}> */}
+
       <SearchContext.Provider value={{ search, setSearch }}>
+
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <Component {...pageProps} />
