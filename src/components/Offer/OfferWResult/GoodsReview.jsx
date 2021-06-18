@@ -22,6 +22,15 @@ const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: "840px",
     margin: "20px auto",
+    background: "transparent",
+    color: "#fff",
+    boxShadow: "none",
+    borderBottom: "1px solid #fff",
+    borderRadius: 0,
+  },
+  reviewWrapper: {
+    width: "840px",
+    margin: "20px auto 0",
   },
   title: {
     color: "#fff",
@@ -59,7 +68,7 @@ const GoodsReview = () => {
   }, 0);
 
   return (
-    <Grid container className={classes.root}>
+    <Grid container className={classes.reviewWrapper}>
       <Typography
         gutterBottom
         variant="h5"
@@ -89,7 +98,7 @@ const GoodsReview = () => {
         title="Paella dish"
       /> */}
       <CardContent>
-        <Typography variant="body2" color="textSecondary" component="p">
+        <Typography variant="body2" component="p">
           {bestGood.reviews[0].text}
         </Typography>
       </CardContent>
