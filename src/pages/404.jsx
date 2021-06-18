@@ -4,7 +4,7 @@ import classes from '@/styles/error.module.scss';
 
 export default function ErrorPage() {
   return (
-    <MainLayout>
+    <MainLayout err='ttt'>
       <h1 className={classes.error}>Error 404</h1>
       <p>
         Please{' '}
