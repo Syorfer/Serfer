@@ -12,12 +12,9 @@ const OfferLayout = () => {
         {search.searchValue.length}
       </h1> */}
       {search.submit ?
-        // <OfferWResult />
-        // :
-        // <EmptyOffer />
-        <EmptyOffer />
-        :
         <OfferWResult />
+        :
+        <EmptyOffer />
       }
     </div>
   );

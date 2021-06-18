@@ -58,8 +58,6 @@ const GoodsReview = () => {
     return prevGood.price < curGood.price ? prevGood : curGood;
   }, 0);
 
-  console.log(bestGood.reviews)
-
   return (
     <Grid container className={classes.root}>
       <Typography
@@ -82,8 +80,8 @@ const GoodsReview = () => {
             <MoreVertIcon />
           </IconButton>
         }
-        title="Автор отзыва"
-        subheader="September 14, 2016"
+        title={bestGood.reviews[0].autor}
+        subheader={bestGood.reviews[0].date}
       />
       {/* <CardMedia
         className={classes.media}
@@ -92,8 +90,7 @@ const GoodsReview = () => {
       /> */}
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-          This impressive paella is a perfect party dish and a fun meal to cook together with your
-          guests. Add 1 cup of frozen peas along with the mussels, if you like.
+          {bestGood.reviews[0].text}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
