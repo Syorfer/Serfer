@@ -21,6 +21,13 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: "36ch",
     backgroundColor: theme.palette.background.paper,
   },
+  // bestOfferTitle: {
+  //   color: "#fff",
+  //   fontWeight: "500",
+  //   fontSize: "32px",
+  //   width: "550px",
+  //   margin: "0px"
+  // },
   inline: {
     display: "inline",
   },
@@ -34,7 +41,7 @@ const OfferWResult = () => {
   return (
     <>
       {/* <h1 className='offer__title'>{search.searchValue}</h1> */}
-      <h1 className="offer__title">Лучшее предложение</h1>
+      {/* <h1 className={classes.bestOfferTitle}>Лучшее предложение</h1> */}
       <BestOffer />
       <Grid container justify="center">
         <List className={classes.root}>

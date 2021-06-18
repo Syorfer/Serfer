@@ -8,9 +8,9 @@ const OfferLayout = () => {
   const { search } = useContext(SearchContext);
   return (
     <div className='offer'>
-      <h1 className='offer__title'>
-        {search.searchValue.lenght}
-      </h1>
+      {/* <h1 className='offer__title'>
+        {search.searchValue.length}
+      </h1> */}
       {search.submit ?
         // <OfferWResult />
         // :

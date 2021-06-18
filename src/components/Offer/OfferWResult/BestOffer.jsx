@@ -8,24 +8,36 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import { GoodsContext } from "@/contexts/goodsContext";
+import GoodsReview from "./GoodsReview";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: "100%",
-    height: "200px",
-    margin: "0 50px"
+    maxWidth: "840px",
+    borderRadius: "20px",
+    margin: "0 auto"
+  },
+  cardWrapper: {
+    width: "100%"
   },
   flex: {
     display: "flex",
-    justifyContent: "center"
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  bestOfferTitle: {
+    color: "#fff",
+    fontWeight: "500",
+    fontSize: "32px",
+    width: "550px",
+    margin: "50px auto 20px 0"
   },
   cardImage: {
     width: "40%",
-    height: "200px"
+    height: "200px",
   },
   cardContent: {
-    width: "60%"
-  }
+    width: "60%",
+  },
 }));
 
 const BestOffer = () => {
@@ -37,35 +49,39 @@ const BestOffer = () => {
   }, 0);
 
   return (
-    <Grid container justify="center">
-      <Card className={classes.root}>
-        <CardActionArea display="flex" className={classes.flex}>
-          <CardMedia
-            component="img"
-            alt={bestGood.model}
-            height="140"
-            className={classes.cardImage}
-            image={bestGood.image}
-            title={bestGood.model}
-          />
-          <CardContent className={classes.cardContent}>
-            <Typography gutterBottom variant="h5" component="h2">
-              {bestGood.model}
-            </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-              {bestGood.rate}
-            </Typography>
-            <Typography gutterBottom variant="h5" component="h2">
-              {bestGood.price}
-            </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-              Доставка - {bestGood.deliveryCost} ₽
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-        <CardActions></CardActions>
-      </Card>
-    </Grid>
+    <>
+      <Grid container justify="center" className={classes.root}>
+      <h1 className={classes.bestOfferTitle}>Лучшее предложение</h1>
+        <Card className={classes.cardWrapper}>
+          <CardActionArea className={classes.flex}>
+            <CardMedia
+              component="img"
+              alt={bestGood.model}
+              height="140"
+              className={classes.cardImage}
+              image={bestGood.image}
+              title={bestGood.model}
+            />
+            <CardContent className={classes.cardContent}>
+              <Typography gutterBottom variant="h5" component="h2">
+                {bestGood.model}
+              </Typography>
+              <Typography variant="body2" color="textSecondary" component="p">
+                {bestGood.rate}
+              </Typography>
+              <Typography gutterBottom variant="h5" component="h2">
+                {bestGood.price}
+              </Typography>
+              <Typography variant="body2" color="textSecondary" component="p">
+                Доставка - {bestGood.deliveryCost} ₽
+              </Typography>
+            </CardContent>
+          </CardActionArea>
+          <CardActions></CardActions>
+        </Card>
+      </Grid>
+      <GoodsReview />
+    </>
   );
 };
 
