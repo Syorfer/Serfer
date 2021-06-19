@@ -11,13 +11,26 @@ import { GoodsContext } from "@/contexts/goodsContext";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: "100%",
-    maxWidth: "36ch",
-    backgroundColor: theme.palette.background.paper,
+    width: "840px",
+    backgroundColor: "transparent",
+    margin: "0 auto",
+    color: "#fff",
+  },
+  similarOffersTitle: {
+    color: "#fff",
+    fontWeight: "500",
+    fontSize: "32px",
+    width: "550px",
+    margin: "50px auto 20px 0",
   },
   inline: {
     display: "inline",
   },
+  avatar: {
+      width: "160px",
+      height: "120px",
+      borderRadius: "20px",
+  }
 }));
 
 const GoodsList = () => {
@@ -26,22 +39,24 @@ const GoodsList = () => {
 
   return (
     <>
-      <Grid container justify="center">
+      <Grid container justify="center" className={classes.root}>
+        <Typography component="h1" className={classes.similarOffersTitle}>
+          Похожие предложения
+        </Typography>
         <List className={classes.root}>
           {goods.map((good) => (
             <ListItem key={good.id} alignItems="flex-start">
               <ListItemAvatar>
-                <Avatar alt={good.model} src={good.image} />
+                <Avatar alt={good.model} src={good.image} className={classes.avatar} />
               </ListItemAvatar>
               <ListItemText
-                primary={good.model}
+                primary={good.nameFull}
                 secondary={
                   <>
                     <Typography
                       component="span"
-                      variant="body2"
                       className={classes.inline}
-                      color="textPrimary"
+                      color="#fff"
                     >
                       {`${good.price} ₽`}
                     </Typography>
