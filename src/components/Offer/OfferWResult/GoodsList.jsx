@@ -16,6 +16,10 @@ const useStyles = makeStyles((theme) => ({
     margin: "0 auto",
     color: "#fff",
   },
+  wrapper: {
+    display: "flex",
+    justifyContent: "space-between",
+  },
   similarOffersTitle: {
     color: "#fff",
     fontWeight: "500",
@@ -27,10 +31,23 @@ const useStyles = makeStyles((theme) => ({
     display: "inline",
   },
   avatar: {
-      width: "160px",
-      height: "120px",
-      borderRadius: "20px",
-  }
+    width: "160px",
+    height: "120px",
+    borderRadius: "20px",
+  },
+  goodRate: {
+    color: "#fff",
+    fontSize: "14px",
+  },
+  goodDelivery: {
+    color: "#fff",
+    fontSize: "14px",
+    fontWeight: "500",
+  },
+  goodPrice: {
+    color: "#fff",
+    fontSize: "24px"
+  },
 }));
 
 const GoodsList = () => {
@@ -45,25 +62,33 @@ const GoodsList = () => {
         </Typography>
         <List className={classes.root}>
           {goods.map((good) => (
-            <ListItem key={good.id} alignItems="flex-start">
+            <ListItem key={good.id} className={classes.wrapper}>
               <ListItemAvatar>
-                <Avatar alt={good.model} src={good.image} className={classes.avatar} />
+                <Avatar
+                  alt={good.model}
+                  src={good.image}
+                  className={classes.avatar}
+                />
               </ListItemAvatar>
               <ListItemText
                 primary={good.nameFull}
                 secondary={
                   <>
-                    <Typography
-                      component="span"
-                      className={classes.inline}
-                      color="#fff"
-                    >
-                      {`${good.price} ₽`}
+                    <Typography component="p" className={classes.goodRate}>
+                      {`Рейтинг: ${good.rate}`}
                     </Typography>
-                    {` — ${good.nameFull}`}
+                    <Typography component="p" className={classes.goodDelivery}>
+                      {good.deliveryCost === 0
+                        ? `Бесплатная доставка`
+                        : `Доставка: ${good.deliveryCost} ₽`}
+                    </Typography>
                   </>
                 }
               />
+              <ListItemText
+                primary={`${good.price} ₽`}
+                className={classes.goodPrice}
+              ></ListItemText>
             </ListItem>
           ))}
         </List>

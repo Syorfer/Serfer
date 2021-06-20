@@ -45,6 +45,7 @@ const useStyles = makeStyles((theme) => ({
     transition: theme.transitions.create("transform", {
       duration: theme.transitions.duration.shortest,
     }),
+    color: "#fff",
   },
   expandOpen: {
     transform: "rotate(180deg)",
