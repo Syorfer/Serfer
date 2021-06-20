@@ -79,7 +79,6 @@ const BestOffer = () => {
               </Typography>
             </CardContent>
           </CardActionArea>
-          <CardActions></CardActions>
         </Card>
       </Grid>
       <GoodsReview />
