@@ -74,10 +74,10 @@ const GoodsList = () => {
                 primary={good.nameFull}
                 secondary={
                   <>
-                    <Typography component="p" className={classes.goodRate}>
+                    <Typography component="span" className={classes.goodRate}>
                       {`Рейтинг: ${good.rate}`}
                     </Typography>
-                    <Typography component="p" className={classes.goodDelivery}>
+                    <Typography component="span" className={classes.goodDelivery}>
                       {good.deliveryCost === 0
                         ? `Бесплатная доставка`
                         : `Доставка: ${good.deliveryCost} ₽`}

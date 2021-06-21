@@ -59,7 +59,7 @@ const ReviewItem = ({index}) => {
         subheader={bestGood.reviews[index].date}
       />
       <CardContent>
-        <Typography variant="body2" component="p">
+        <Typography variant="body2" component="span">
           {bestGood.reviews[index].text}
         </Typography>
       </CardContent>

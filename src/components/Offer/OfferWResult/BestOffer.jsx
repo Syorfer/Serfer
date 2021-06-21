@@ -67,13 +67,13 @@ const BestOffer = () => {
               <Typography gutterBottom variant="h5" component="h2">
                 {bestGood.nameFull}
               </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
+              <Typography variant="body2" color="textSecondary" component="span">
                 Рейтинг: {bestGood.rate}
               </Typography>
               <Typography gutterBottom variant="h5" component="h2">
                 {bestGood.price}
               </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
+              <Typography variant="body2" color="textSecondary" component="span">
                 Доставка - {bestGood.deliveryCost} ₽
               </Typography>
             </CardContent>
