@@ -4,11 +4,10 @@ import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
-import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import { GoodsContext } from "@/contexts/goodsContext";
-import GoodsReview from "./GoodsReview";
+import GoodsReviews from "./Review/GoodsReviews";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -81,7 +80,7 @@ const BestOffer = () => {
           </CardActionArea>
         </Card>
       </Grid>
-      <GoodsReview />
+      <GoodsReviews />
     </>
   );
 };

@@ -3,20 +3,14 @@ import { Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import clsx from "clsx";
 import Card from "@material-ui/core/Card";
-import CardHeader from "@material-ui/core/CardHeader";
 import CardContent from "@material-ui/core/CardContent";
 import CardActions from "@material-ui/core/CardActions";
 import Collapse from "@material-ui/core/Collapse";
-import Avatar from "@material-ui/core/Avatar";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
-import { red } from "@material-ui/core/colors";
-import FavoriteIcon from "@material-ui/icons/Favorite";
-import ShareIcon from "@material-ui/icons/Share";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { GoodsContext } from "@/contexts/goodsContext";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
+import ReviewItem from "./ReviewItem";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -50,9 +44,6 @@ const useStyles = makeStyles((theme) => ({
   expandOpen: {
     transform: "rotate(180deg)",
   },
-  avatar: {
-    backgroundColor: red[500],
-  },
 }));
 
 const GoodsReview = () => {
@@ -79,31 +70,8 @@ const GoodsReview = () => {
         Отзывы:
       </Typography>
       <Card className={classes.root}>
-        <CardHeader
-          avatar={
-            <Avatar>
-              {!bestGood.reviews.avatar ? (
-                <FontAwesomeIcon icon={faUser} />
-              ) : (
-                bestGood.reviews.avatar
-              )}
-            </Avatar>
-          }
-          title={bestGood.reviews[0].autor}
-          subheader={bestGood.reviews[0].date}
-        />
-        <CardContent>
-          <Typography variant="body2" component="p">
-            {bestGood.reviews[0].text}
-          </Typography>
-        </CardContent>
+        <ReviewItem index={0} />
         <CardActions disableSpacing>
-          <IconButton aria-label="add to favorites">
-            <FavoriteIcon />
-          </IconButton>
-          <IconButton aria-label="share">
-            <ShareIcon />
-          </IconButton>
           <IconButton
             className={clsx(classes.expand, {
               [classes.expandOpen]: expanded,
@@ -117,14 +85,9 @@ const GoodsReview = () => {
         </CardActions>
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
-            {bestGood.reviews.slice(1).map((good) => {
-              
-              return (
-                <Typography paragraph key={good.id}>
-                  {good.text}
-                </Typography>
-              );
-            })}
+            {
+              bestGood.reviews.slice(1).map((good, index) => <ReviewItem key={good.id} index={index + 1} />)
+            }
           </CardContent>
         </Collapse>
       </Card>
