@@ -39,13 +39,21 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+function randomInteger(min, max) {
+  let rand = min - 0.5 + Math.random() * (max - min + 1);
+  return Math.round(rand);
+}
+
+
 const BestOffer = () => {
   const classes = useStyles();
   const { goods } = useContext(GoodsContext);
 
-  const bestGood = goods.reduce((prevGood, curGood) => {
-    return prevGood.price < curGood.price ? prevGood : curGood;
-  }, 0);
+  const bestGoodInx = randomInteger(0, (goods.length--));
+  // const bestGood = goods.reduce((prevGood, curGood) => {
+  //   return prevGood.price < curGood.price ? prevGood : curGood;
+  // }, 0);
+  const bestGood = goods.find(item => item.id === +bestGoodInx);
 
   return (
     <>
@@ -67,12 +75,13 @@ const BestOffer = () => {
               <Typography gutterBottom variant="h5" component="h2">
                 {bestGood.nameFull}
               </Typography>
-              <Typography variant="body2" color="textSecondary" component="span">
+              <Typography gutterBottom variant="h5" component="h2">
+                {bestGood.price} ₽
+              </Typography>
+              <Typography variant="body2" color="textSecondary" component="p">
                 Рейтинг: {bestGood.rate}
               </Typography>
-              <Typography gutterBottom variant="h5" component="h2">
-                {bestGood.price}
-              </Typography>
+
               <Typography variant="body2" color="textSecondary" component="span">
                 Доставка - {bestGood.deliveryCost} ₽
               </Typography>
