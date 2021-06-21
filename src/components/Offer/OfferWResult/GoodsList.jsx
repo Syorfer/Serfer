@@ -35,9 +35,11 @@ const useStyles = makeStyles((theme) => ({
     height: "120px",
     borderRadius: "20px",
   },
+  
   goodRate: {
     color: "#fff",
     fontSize: "14px",
+    
   },
   goodDelivery: {
     color: "#fff",
@@ -74,9 +76,10 @@ const GoodsList = () => {
                 primary={good.nameFull}
                 secondary={
                   <>
-                    <Typography component="p" className={classes.goodRate}>
+                    <Typography component="span" className={classes.goodRate}>
                       {`Рейтинг: ${good.rate}`}
                     </Typography>
+                    
                     <Typography component="span" className={classes.goodDelivery}>
                       {good.deliveryCost === 0
                         ? `Бесплатная доставка`

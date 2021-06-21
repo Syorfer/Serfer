@@ -78,7 +78,7 @@ const BestOffer = () => {
               <Typography gutterBottom variant="h5" component="h2">
                 {bestGood.price} ₽
               </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
+              <Typography variant="body2" color="textSecondary" component="h6">
                 Рейтинг: {bestGood.rate}
               </Typography>
 
