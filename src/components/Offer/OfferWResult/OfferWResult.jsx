@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useEffect, useContext } from "react";
 import BestOffer from "./BestOffer";
 import GoodsList from "./GoodsList";
+import { GoodsContext } from "@/contexts/goodsContext";
+//import { SearchContext } from '@/contexts/searchContext';
+
 
 const OfferWResult = () => {
+  //const { search, setSearch } = useContext(SearchContext);
+  const { goods } = useContext(GoodsContext);
+  
+
+
 
   return (
     <>

@@ -2,6 +2,7 @@
   "goods": [
     {
       "id": 0,
+      "bestItem": false,
       "code": "MHDH3RU/A",
       "model":  "iPhone 11 128Gb",
       "brand": "APPLE",
@@ -48,6 +49,7 @@
     },
     {
       "id": 1,
+      "bestItem": false,
       "code": "MHDH3RU/A",
       "model":  "iPhone 11 64Gb",
       "brand": "APPLE",
@@ -94,6 +96,7 @@
     },
     {
       "id": 2,
+      "bestItem": false,
       "code": "MGJA3RU/A",
       "model":  "iPhone 12 128Gb",
       "brand": "APPLE",
@@ -148,6 +151,7 @@
     },
     {
       "id": 3,
+      "bestItem": false,
       "code": "MHGP3RU/A",
       "model":  "iPhone SE 2020 64Gb",
       "brand": "APPLE",
@@ -202,6 +206,7 @@
     },
     {
       "id": 4,
+      "bestItem": false,
       "code": "MGMK3RU/A",
       "model":  "iPhone 12 Pro 128Gb",
       "brand": "APPLE",
@@ -263,6 +268,7 @@
     } ,
     {
       "id": 5,
+      "bestItem": false,
       "code": "MGE33RU/A",
       "model":  "iPhone 12 mini 128Gb",
       "brand": "APPLE",

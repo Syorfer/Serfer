@@ -10,6 +10,7 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import ShareIcon from "@material-ui/icons/Share";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { GoodsContext } from "@/contexts/goodsContext";
+import { SearchContext } from '@/contexts/searchContext';
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 const useStyles = makeStyles((theme) => ({
@@ -35,32 +36,32 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ReviewItem = ({index}) => {
+const ReviewItem = ({index, review }) => {
   const classes = useStyles();
   const { goods } = useContext(GoodsContext);
 
-  const bestGood = goods.reduce((prevGood, curGood) => {
-    return prevGood.price < curGood.price ? prevGood : curGood;
-  }, 0);
+  // const bestGood = goods.reduce((prevGood, curGood) => {
+  //   return prevGood.price < curGood.price ? prevGood : curGood;
+  // }, 0);
 
   return (
     <>
       <CardHeader
         avatar={
           <Avatar>
-            {!bestGood.reviews.avatar ? (
+            {!review.avatarIcon ? (
               <FontAwesomeIcon icon={faUser} />
             ) : (
-              bestGood.reviews.avatar
+              review.avatarIcon
             )}
           </Avatar>
         }
-        title={bestGood.reviews[index].autor}
-        subheader={bestGood.reviews[index].date}
+        title={review.autor}
+        subheader={review.date}
       />
       <CardContent>
         <Typography variant="body2" component="span">
-          {bestGood.reviews[index].text}
+          {review.text}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>

@@ -8,6 +8,7 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import { GoodsContext } from "@/contexts/goodsContext";
 import GoodsReviews from "./Review/GoodsReviews";
+import { SearchContext } from '@/contexts/searchContext';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -39,22 +40,19 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function randomInteger(min, max) {
-  let rand = min - 0.5 + Math.random() * (max - min + 1);
-  return Math.round(rand);
-}
+
 
 
 const BestOffer = () => {
   const classes = useStyles();
+  const { search } = useContext(SearchContext);
   const { goods } = useContext(GoodsContext);
-
-  const bestGoodInx = randomInteger(0, (goods.length--));
   // const bestGood = goods.reduce((prevGood, curGood) => {
   //   return prevGood.price < curGood.price ? prevGood : curGood;
   // }, 0);
-  const bestGood = goods.find(item => item.id === +bestGoodInx);
-
+  const bestGood = { ...goods.find(item => item.id === search.bestGoodId) };
+  console.log(bestGood);
+  console.log(search.bestGoodId);
   return (
     <>
       <Grid container justify="center" className={classes.root}>
@@ -89,7 +87,7 @@ const BestOffer = () => {
           </CardActionArea>
         </Card>
       </Grid>
-      <GoodsReviews />
+      <GoodsReviews bestGood={bestGood } />
     </>
   );
 };
