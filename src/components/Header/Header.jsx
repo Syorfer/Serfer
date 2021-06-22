@@ -14,7 +14,7 @@ const Header = () => {
     const { goods } = useContext(GoodsContext);
     const [form, setForm] = useState(search);
     useEffect(() => {
-        const bestGoodInx = randomInteger(0, (goods && goods.length--));
+        const bestGoodInx = randomInteger(0, (goods && goods.length)-1);
         console.log(goods);
         goods && setSearch(prev => ({ ...prev, bestGoodId: goods[bestGoodInx] && goods[bestGoodInx].id || 0 }));
     }, [search.searchValue]);
