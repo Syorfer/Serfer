@@ -2,22 +2,14 @@ import React, { useState, useContext, useEffect } from 'react';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { SearchContext } from '@/contexts/searchContext';
-import { GoodsContext } from "@/contexts/goodsContext";
 
-function randomInteger(min, max = 1) {
-    let rand = min - 0.5 + Math.random() * (max - min + 1);
-    return Math.round(rand);
-}
+
 
 const Header = () => {
     const { search, setSearch } = useContext(SearchContext);
-    const { goods } = useContext(GoodsContext);
+    //const { goods } = useContext(GoodsContext);
     const [form, setForm] = useState(search);
-    useEffect(() => {
-        const bestGoodInx = randomInteger(0, (goods && goods.length)-1);
-        console.log(goods);
-        goods && setSearch(prev => ({ ...prev, bestGoodId: goods[bestGoodInx] && goods[bestGoodInx].id || 0 }));
-    }, [search.searchValue]);
+    
 
     const onFieldChange = (e) => {
         const { name: fieldName, value } = e.target;

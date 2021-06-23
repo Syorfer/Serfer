@@ -50,7 +50,7 @@ const BestOffer = () => {
   // const bestGood = goods.reduce((prevGood, curGood) => {
   //   return prevGood.price < curGood.price ? prevGood : curGood;
   // }, 0);
-  const bestGood = { ...goods.find(item => item.id === search.bestGoodId) };
+  const bestGood = { ...goods.data.find(item => item.id === search.bestGoodId) };
   console.log(bestGood);
   console.log(search.bestGoodId);
   return (

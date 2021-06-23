@@ -63,7 +63,7 @@ const GoodsList = () => {
           Похожие предложения
         </Typography>
         <List className={classes.root}>
-          {goods.map((good) => (
+          {goods.data.map((good) => (
             <ListItem key={good.id} className={classes.wrapper}>
               <ListItemAvatar>
                 <Avatar
