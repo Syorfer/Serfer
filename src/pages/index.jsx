@@ -5,17 +5,26 @@ import Params from '@/components/Params';
 import { SearchContext } from '@/contexts/searchContext';
 import { GoodsContext } from '@/contexts/goodsContext';
 export default function Index({ dataGoods }) {
-  const [goods, setGoods] = useState(dataGoods);
+  console.log(dataGoods);
+  const INITIAL_GOODS = {
+    data: dataGoods,
+    selectedData: [] ,
+    idDataSet: Date.now()    
+  };
+  const [goods, setGoods] = useState(INITIAL_GOODS);
+
+  //console.log(goods);
   const { search } = useContext(SearchContext);
   useEffect(() => {
     async function load() {
       const response = await fetch(`${process.env.API_URL}/goods`);
       const data = await response.json();
-      setGoods(data);
+      setGoods(prev => ({ ...prev, data: data, idDataSet: Date.now() }));
     }
     load();
   }, []);
-
+   
+  console.log(goods);
   return (
     <GoodsContext.Provider value={{ goods, setGoods }}>
 

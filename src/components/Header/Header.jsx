@@ -1,23 +1,28 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { SearchContext } from '@/contexts/searchContext';
 
+
+
 const Header = () => {
     const { search, setSearch } = useContext(SearchContext);
+    //const { goods } = useContext(GoodsContext);
     const [form, setForm] = useState(search);
+    
 
     const onFieldChange = (e) => {
         const { name: fieldName, value } = e.target;
-       
+
         setForm(prev => ({ ...prev, [fieldName]: value }));
     };
     const onSubmit = (e) => {
         setSearch(prev => ({ ...prev, searchValue: form.searchValue, submit: true }));
         e.preventDefault();
+        onReset();
     };
     const onReset = () => {
-        setForm({ searchValue: ''});
+        setForm({ searchValue: '' });
     };
 
     return (

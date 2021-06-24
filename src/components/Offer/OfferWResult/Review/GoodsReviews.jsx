@@ -10,6 +10,7 @@ import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { GoodsContext } from "@/contexts/goodsContext";
+import { SearchContext } from '@/contexts/searchContext';
 import ReviewItem from "./ReviewItem";
 
 const useStyles = makeStyles((theme) => ({
@@ -46,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const GoodsReview = () => {
+const GoodsReview = ({ bestGood }) => {
   const classes = useStyles();
   const { goods } = useContext(GoodsContext);
   const [expanded, setExpanded] = useState(false);
@@ -55,9 +56,9 @@ const GoodsReview = () => {
     setExpanded(!expanded);
   };
 
-  const bestGood = goods.reduce((prevGood, curGood) => {
-    return prevGood.price < curGood.price ? prevGood : curGood;
-  }, 0);
+  // const bestGood = goods.reduce((prevGood, curGood) => {
+  //   return prevGood.price < curGood.price ? prevGood : curGood;
+  // }, 0);
 
   return (
     <Grid container className={classes.reviewWrapper}>
@@ -70,7 +71,7 @@ const GoodsReview = () => {
         Отзывы:
       </Typography>
       <Card className={classes.root}>
-        <ReviewItem index={0} />
+        <ReviewItem index={0} bestGood={bestGood} review = { bestGood.reviews[0] }  />
         <CardActions disableSpacing>
           <IconButton
             className={clsx(classes.expand, {
@@ -86,7 +87,7 @@ const GoodsReview = () => {
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
             {
-              bestGood.reviews.slice(1).map((good, index) => <ReviewItem key={good.id} index={index + 1} />)
+              [...bestGood.reviews.filter((item,indx) => indx > 0)].map((review, index) => <ReviewItem key = { review.id } index = { index + 1 } review = { review } />)
             }
           </CardContent>
         </Collapse>
@@ -96,3 +97,4 @@ const GoodsReview = () => {
 };
 
 export default GoodsReview;
+//.slice(1)

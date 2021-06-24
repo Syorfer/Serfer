@@ -8,6 +8,7 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import { GoodsContext } from "@/contexts/goodsContext";
 import GoodsReviews from "./Review/GoodsReviews";
+import { SearchContext } from '@/contexts/searchContext';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -33,20 +34,26 @@ const useStyles = makeStyles((theme) => ({
   cardImage: {
     width: "40%",
     height: "200px",
+    objectFit: "contain"
   },
   cardContent: {
     width: "60%",
   },
 }));
 
+
+
+
 const BestOffer = () => {
   const classes = useStyles();
+  const { search } = useContext(SearchContext);
   const { goods } = useContext(GoodsContext);
-
-  const bestGood = goods.reduce((prevGood, curGood) => {
-    return prevGood.price < curGood.price ? prevGood : curGood;
-  }, 0);
-
+  // const bestGood = goods.reduce((prevGood, curGood) => {
+  //   return prevGood.price < curGood.price ? prevGood : curGood;
+  // }, 0);
+  const bestGood = { ...goods.data.find(item => item.id === search.bestGoodId) };
+  console.log(bestGood);
+  console.log(search.bestGoodId);
   return (
     <>
       <Grid container justify="center" className={classes.root}>
@@ -59,6 +66,7 @@ const BestOffer = () => {
               component="img"
               alt={bestGood.model}
               height="140"
+
               className={classes.cardImage}
               image={bestGood.image}
               title={bestGood.model}
@@ -67,12 +75,13 @@ const BestOffer = () => {
               <Typography gutterBottom variant="h5" component="h2">
                 {bestGood.nameFull}
               </Typography>
-              <Typography variant="body2" color="textSecondary" component="span">
+              <Typography gutterBottom variant="h5" component="h2">
+                {bestGood.price} ₽
+              </Typography>
+              <Typography variant="body2" color="textSecondary" component="h6">
                 Рейтинг: {bestGood.rate}
               </Typography>
-              <Typography gutterBottom variant="h5" component="h2">
-                {bestGood.price}
-              </Typography>
+
               <Typography variant="body2" color="textSecondary" component="span">
                 Доставка - {bestGood.deliveryCost} ₽
               </Typography>
@@ -80,7 +89,7 @@ const BestOffer = () => {
           </CardActionArea>
         </Card>
       </Grid>
-      <GoodsReviews />
+      <GoodsReviews bestGood={bestGood} />
     </>
   );
 };
