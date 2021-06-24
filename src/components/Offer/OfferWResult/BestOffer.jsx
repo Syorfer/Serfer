@@ -34,6 +34,7 @@ const useStyles = makeStyles((theme) => ({
   cardImage: {
     width: "40%",
     height: "200px",
+    objectFit: "contain"
   },
   cardContent: {
     width: "60%",
@@ -65,6 +66,7 @@ const BestOffer = () => {
               component="img"
               alt={bestGood.model}
               height="140"
+
               className={classes.cardImage}
               image={bestGood.image}
               title={bestGood.model}
@@ -87,7 +89,7 @@ const BestOffer = () => {
           </CardActionArea>
         </Card>
       </Grid>
-      <GoodsReviews bestGood={bestGood } />
+      <GoodsReviews bestGood={bestGood} />
     </>
   );
 };

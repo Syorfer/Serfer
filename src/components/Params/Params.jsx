@@ -27,6 +27,7 @@ const Params = () => {
       deliveryMax: deliveryValue[1],
       deliveryValue: deliveryValue
     }));
+    setGoods(prev => ({ ...prev, selectedData: [...goods.data]}));
     console.log(searchParam);
   },
     [goods.idDataSet]
@@ -50,6 +51,7 @@ const Params = () => {
     e.preventDefault();
     // console.log(search);
   };
+
   return (
     <SearchParamContext.Provider value={{ searchParam, setSearchParam }}>
       <form className='params' onSubmit={onSubmit}>

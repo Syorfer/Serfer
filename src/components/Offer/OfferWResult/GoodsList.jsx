@@ -34,12 +34,16 @@ const useStyles = makeStyles((theme) => ({
     width: "160px",
     height: "120px",
     borderRadius: "20px",
+    objectFit: "contain",
+    marginRight: "20px"
   },
-
+  goodDesc: {
+    flexGrow: "1"
+  },
   goodRate: {
     color: "#fff",
     fontSize: "14px",
-
+    marginRight: "1rem"
   },
   goodDelivery: {
     color: "#fff",
@@ -48,7 +52,8 @@ const useStyles = makeStyles((theme) => ({
   },
   goodPrice: {
     color: "#fff",
-    fontSize: "24px"
+    fontSize: "24px",
+    textAlign: "right"
   },
 }));
 
@@ -63,7 +68,7 @@ const GoodsList = () => {
           Похожие предложения
         </Typography>
         <List className={classes.root}>
-          {goods.data.map((good) => (
+          {goods.selectedData.map((good) => (
             <ListItem key={good.id} className={classes.wrapper}>
               <ListItemAvatar>
                 <Avatar
@@ -74,6 +79,7 @@ const GoodsList = () => {
               </ListItemAvatar>
               <ListItemText
                 primary={good.nameFull}
+                className={classes.goodDesc}
                 secondary={
                   <>
                     <Typography component="span" className={classes.goodRate}>
