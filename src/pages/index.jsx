@@ -15,14 +15,14 @@ export default function Index({ dataGoods }) {
 
   //console.log(goods);
   const { search } = useContext(SearchContext);
-  useEffect(() => {
-    async function load() {
-      const response = await fetch(`${process.env.API_URL}/goods`);
-      const data = await response.json();
-      setGoods(prev => ({ ...prev, data: data, idDataSet: Date.now() }));
-    }
-    load();
-  }, []);
+  // useEffect(() => {
+  //   async function load() {
+  //     const response = await fetch(`${process.env.API_URL}/goods`);
+  //     const data = await response.json();
+  //     setGoods(prev => ({ ...prev, data: data, idDataSet: Date.now() }));
+  //   }
+  //   load();
+  // }, []);
    
   console.log(goods);
   return (
