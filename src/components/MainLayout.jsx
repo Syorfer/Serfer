@@ -6,7 +6,7 @@ export function MainLayout({ children, title = 'Next App' }) {
   return (
     <>
       <Head>
-        <title>{title} | Sёrfer</title>
+        <title> Sёrfer ищет {title}</title>
         <meta name='keywords' content='Sёrfer,next,javascript,nextjs,react' />
         <meta name='description' content='Sёrfer for next' />
       </Head>

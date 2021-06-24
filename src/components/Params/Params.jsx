@@ -1,18 +1,42 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
+import _ from 'lodash';
 import RangeSlider from './Sliders/RangeSlider';
 import { Typography, Button } from '@material-ui/core';
 import RatingSlider from './Sliders/RatingSlider';
+
 import Review from './Review';
 import { SearchParamContext } from '@/contexts/searchParamContext';
 import { SearchContext } from '@/contexts/searchContext';
+import { GoodsContext } from "@/contexts/goodsContext";
 import { INITIAL_PARAM } from '@/constants/initParam';
 
 const Params = () => {
   const [searchParam, setSearchParam] = useState(INITIAL_PARAM);
   const { search, setSearch } = useContext(SearchContext);
+  const { goods, setGoods } = useContext(GoodsContext);
+  useEffect(() => {
+    //console.log(_.minBy(goods.data, 'price'));
+    const priceValue = [_.minBy(goods.data, 'price').price, _.maxBy(goods.data, 'price').price];
+    const deliveryValue = [_.minBy(goods.data, 'deliveryCost').deliveryCost, _.maxBy(goods.data, 'deliveryCost').deliveryCost];
+    setSearchParam(prev => ({
+      ...prev,
+      priceMin: priceValue[0],
+      priceMax: priceValue[1],
+      priceValue: priceValue,
+      deliveryMin: deliveryValue[0],
+      deliveryMax: deliveryValue[1],
+      deliveryValue: deliveryValue
+    }));
+    setGoods(prev => ({ ...prev, selectedData: [...goods.data]}));
+    console.log(searchParam);
+  },
+    [goods.idDataSet]
+  );
+
   // const handleSubmit = (event) => {
   //   event.preventDefault();
   // };
+
   const onSubmit = (e) => {
     setSearch(prev => ({
       ...prev,
@@ -25,8 +49,9 @@ const Params = () => {
       submit: true
     }));
     e.preventDefault();
-    console.log(search);
+    // console.log(search);
   };
+
   return (
     <SearchParamContext.Provider value={{ searchParam, setSearchParam }}>
       <form className='params' onSubmit={onSubmit}>

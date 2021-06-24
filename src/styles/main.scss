@@ -77,7 +77,6 @@ main {
 .offer {
   background: $dark-blue;
   width: 100%;
-  height: 100vh;
 
   &__title {
     color: #fff;
@@ -192,4 +191,8 @@ main {
   &-track {
     color: $orange;
   }
+}
+
+.MuiCardContent-root {
+  padding: 0 !important;
 }

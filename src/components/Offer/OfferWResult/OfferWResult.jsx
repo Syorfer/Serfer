@@ -1,18 +1,22 @@
-import { useContext } from 'react';
-import { Grid } from '@material-ui/core';
-import Image from 'next/image';
-import { SearchContext } from '@/contexts/searchContext';
+import React, { useEffect, useContext } from "react";
+import BestOffer from "./BestOffer";
+import GoodsList from "./GoodsList";
+import { GoodsContext } from "@/contexts/goodsContext";
+//import { SearchContext } from '@/contexts/searchContext';
+
 
 const OfferWResult = () => {
-  const { search } = useContext(SearchContext);
+  //const { search, setSearch } = useContext(SearchContext);
+  const { goods } = useContext(GoodsContext);
+  
+
+
+
   return (
     <>
-      <h1 className='offer__title'>
-        {search.searchValue}
-      </h1>
-      <Grid container justify='center'>
-        <Image src='/man.svg' alt='man-img' width={550} height={550} />
-      </Grid>
+      {/* <h1 className='offer__title'>{search.searchValue}</h1> */}
+      <BestOffer />
+      <GoodsList />
     </>
   );
 };
