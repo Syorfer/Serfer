@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
   goodRate: {
     color: "#fff",
     fontSize: "14px",
-    marginRight: "1rem"
+    marginRight: "1rem "
   },
   goodDelivery: {
     color: "#fff",
